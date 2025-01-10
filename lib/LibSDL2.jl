@@ -18,6 +18,7 @@ module LibSDL2
 using CEnum
 
 libsdl2::String = joinpath(@__DIR__, "libSDL2.so")  
+libsdl2_image::String = joinpath(@__DIR__, "image", "libSDL2_image-2.0.so")  
 
 const SDL_MIN_SINT8 = reinterpret(Int8, ~0x7F)
 const SDL_MIN_SINT16 = reinterpret(Int16, ~0x7FFF)

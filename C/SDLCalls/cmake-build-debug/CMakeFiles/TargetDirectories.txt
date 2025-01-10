@@ -1,0 +1,3 @@
+/home/kyjor/Documents/Projects/Julia/juliac-sdl2/C/SDLCalls/cmake-build-debug/CMakeFiles/SDLCalls.dir
+/home/kyjor/Documents/Projects/Julia/juliac-sdl2/C/SDLCalls/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/kyjor/Documents/Projects/Julia/juliac-sdl2/C/SDLCalls/cmake-build-debug/CMakeFiles/rebuild_cache.dir
