@@ -1,11 +1,12 @@
 # julia +nightly juliac.jl --output-exe game --trim game.jl --experimental
 # julia +nightly --project=/home/kyjor/Documents/Projects/Julia/juliac juliac.jl --output-exe game --trim=unsafe-warn game.jl --experimental
 module Game
-libsdl2::String = joinpath(pwd(), "lib", "libSDL2.so")  
 include("lib/LibSDL2.jl")
-const cur_dir::String = pwd()
 using .LibSDL2
 Base.@ccallable function main()::Cint
+    LibSDL2.libsdl2 = joinpath(pwd(), "lib", "libSDL2.so")  
+    LibSDL2.libsdl2_image = joinpath(pwd(), "lib", "image", "libSDL2_image-2.0.so")  
+    cur_dir::String = pwd()
     SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 16)
     SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 16)
     SDL_Init(SDL_INIT_EVERYTHING)
@@ -15,7 +16,6 @@ Base.@ccallable function main()::Cint
     renderer = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC)
     keep_going = true
     count = 0
-    
     surface = IMG_Load(joinpath(cur_dir, "assets", "cat.png"))
     tex = SDL_CreateTextureFromSurface(renderer, surface)
     SDL_FreeSurface(surface)

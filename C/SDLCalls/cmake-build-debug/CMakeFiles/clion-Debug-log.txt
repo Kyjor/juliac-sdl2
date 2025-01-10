@@ -1,1 +1,0 @@
-CMakeLists.txt not found in /home/kyjor/Documents/Projects/Julia/juliac-sdl2/C/SDLCalls Select CMakeLists.txt
